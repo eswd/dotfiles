@@ -86,7 +86,6 @@ au InsertLeave * match ExtraWhitespace /\s\+$/
 set t_Co=256
 color wombat256mod
 
-
 " Enable syntax highlighting
 " You need to reload this file for the change to apply
 filetype off
