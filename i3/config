@@ -206,3 +206,4 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute s
 exec firefox
 exec_always feh --bg-scale /home/mrwu/Bilder/wallpapers/cube.jpg
 exec --no-startup-id nm-applet
+exec --no-startup-id blueman-applet
