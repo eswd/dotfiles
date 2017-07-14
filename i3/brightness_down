@@ -1,0 +1,9 @@
+#!/bin/bash
+brightness=$(cat /sys/class/backlight/intel_backlight/brightness)
+echo $brightness
+if (($brightness > 0)); then
+  echo "test"
+  let brightness=$brightness-20
+  echo $brightness
+  echo "echo $brightness > /sys/class/backlight/intel_backlight/brightness" | sudo zsh #or bash
+fi
