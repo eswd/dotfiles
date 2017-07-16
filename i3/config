@@ -135,13 +135,13 @@ assign [class="Thunderbird"] $workspace7
 
 
 
-
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
+
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -182,7 +182,8 @@ bar {
 ### eigene Anpassungen ###
 
 # screen locker (first move to "safe" workspace without any chat app)
-bindsym Control+Mod1+l exec i3-msg workspace 1 && i3lock -c 111111 -d
+# deactivated; look at i3exit
+#bindsym Control+Mod1+l exec i3-msg workspace 1 && i3lock -c 111111 -d
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
@@ -208,21 +209,23 @@ exec_always feh --bg-scale /home/mrwu/Bilder/wallpapers/cube.jpg
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 
-set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
+#set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
+set $mode_system System (l) lock, (e) logout, (u) suspend, (r) reboot, (s) shutdown
 mode "$mode_system" {
     bindsym l exec --no-startup-id /home/mrwu/.config/i3/i3exit lock, mode "default" 
     bindsym e exec --no-startup-id /home/mrwu/.config/i3/i3exit logout, mode "default"
-    bindsym s exec --no-startup-id /home/mrwu/.config/i3/i3exit suspend, mode "default"
-    bindsym h exec --no-startup-id /home/mrwu/.config/i3/i3exit hibernate, mode "default"
+    bindsym u exec --no-startup-id /home/mrwu/.config/i3/i3exit suspend, mode "default"
+    #bindsym h exec --no-startup-id /home/mrwu/.config/i3/i3exit hibernate, mode "default"
     bindsym r exec --no-startup-id /home/mrwu/.config/i3/i3exit reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id /home/mrwu/.config/i3/i3exit shutdown, mode "default"
-
+    #bindsym Shift+s exec --no-startup-id /home/mrwu/.config/i3/i3exit shutdown, mode "default"
+    bindsym s exec --no-startup-id /home/mrwu/.config/i3/i3exit shutdown, mode "default"
     # back to normal: Enter or Escape
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
 bindsym $mod+Print mode "$mode_system"
 
-
+# Bluetooth on/off
+bindsym $mod+Shift+b exec --no-startup-id bluetooth off
 
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 lock() {
-    i3lock
+    i3-msg workspace 1_wakeUp && i3lock -c 111111 -d
 }
 
 case "$1" in
