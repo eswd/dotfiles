@@ -34,6 +34,7 @@ syntax on
 set pastetoggle=<F2>
 set clipboard=unnamed
 
+set bs=2     " make backspace behave like normal again
 
 " Showing line numbers and length
 set relativenumber                  " show relative line numbers
