@@ -19,7 +19,7 @@ set $mod Mod4
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 12
 
-font pango:Noto Sans 12 
+font pango:Noto Sans 9
 #font pango:System San Francisco Display 12 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -103,9 +103,9 @@ bindsym $mod+a focus parent
 set $workspace1 "1: "
 set $workspace2 "2: "
 set $workspace3 "3: "
-set $workspace4 "4: "
+set $workspace4 "4: "
 set $workspace5 "5: "
-set $workspace6 "6: "
+set $workspace6 "6: "
 set $workspace7 "7: "
 set $workspace8 "8: "
 set $workspace9 "9: "
@@ -200,8 +200,9 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #d
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec /home/mrwu/.config/i3/brightness_down  # increase screen brightness
-bindsym XF86MonBrightnessDown exec /home/mrwu/.config/i3/brightness_up  # decrease screen brightness
+#bindsym XF86MonBrightnessUp exec   /home/mrwu/.config/i3/brightness_down  # increase screen brightness
+bindsym XF86MonBrightnessDown exec /home/mrwu/.config/i3/brightness_up # decrease screen brightness
+bindsym $mod+Shift+n exec   /home/mrwu/.config/i3/brightness_down  # increase screen brightness
 
 # Touchpad controls
 #bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
@@ -214,9 +215,10 @@ bindsym XF86MonBrightnessDown exec /home/mrwu/.config/i3/brightness_up  # decrea
 
 #exec always firefox # would start firefox start after every restart
 exec firefox
-exec_always feh --bg-scale /home/mrwu/.config/i3/wallpapers/cube.jpg
+exec_always feh --bg-scale /home/mrwu/Bilder/wallpapers/cube.jpg
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
+exec --no-startup-id xrandr --dpi 144 # set the dpi for my laptop. Possible values are: 96(st.);120;144;168;192. For Details see Arch Wiki.
 
 #set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 set $mode_system System (l) lock, (e) logout, (u) suspend, (h) hibernate, (r) reboot, (s) shutdown
