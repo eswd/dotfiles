@@ -47,11 +47,11 @@ highlight ColorColumn ctermbg=233   " the color of the black line on the left
 
 " diable recording for a while..
 
-nnoremap q <nop>
+"nnoremap q <nop>
 
 " easier formatting of paragraphs
-vmap Q gq
-nmap Q gqap
+"vmap Q gq
+"nmap Q gqap
 
 
 " Useful settings
