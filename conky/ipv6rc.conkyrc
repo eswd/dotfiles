@@ -1,0 +1,57 @@
+conky.config = {
+    use_xft = true,
+    xftalpha = 0.8,
+    update_interval = 30.0,
+    update_interval_on_battery = 120.0,
+    total_run_times = 0,
+    own_window = true,
+    own_window_transparent = true,
+    own_window_argb_visual = true,
+    own_window_type = 'normal',
+    own_window_class = 'conky-semi',
+    own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+    background = true,
+    double_buffer = true,
+    imlib_cache_size = 0,
+    uppercase = false,
+    override_utf8_locale = true,
+
+    -- placement
+    maximum_width = 880,
+    alignment = 'bottom_left',
+    --gap_x = -140,
+    gap_y =56,
+
+    -- default drawing
+    draw_shades = false,
+    draw_outline = false,
+    draw_borders = false,
+    draw_graph_borders = true,
+
+    -- colors
+    font = 'Liberation Mono:size=10',
+    --default_color = 'EEEEEE',
+    default_color = '8B8673',
+    color1 = 'AABBFF',
+    color2 = 'FF993D',
+    color3 = '8B8673',
+    --color3 = 'AAAAAA',
+    color4 = '000000',
+    color5 = '111111',
+
+    -- layouting
+    template0 = [[${font Liberation Sans:bold:size=11}${color2}\1 ${color3}${hr 2}${font}]],
+    template1 = [[${color1}\1]],
+    template2 = [[${goto 100}${color}]],
+    template3 = [[${goto 180}${color}${alignr}]],
+    template4 = [[${font Liberation Sans:bold:size=11}${color green}\1 ${color3}${hr 2}${font}]],
+    template5 = [[${font Liberation Sans:bold:size=11}${color red}\1 ${color3}${hr 2}${font}]],
+};
+conky.text = [[
+
+${template1 WLAN}                       ${template3}${v6addrs -s wlp3s0}
+${template1 }                           ${template3}${wireless_essid wlp3s0} | ${addr wlp3s0}
+${template0 }
+${template1 LAN}                        ${template3}${v6addrs -s enp0s31f6}
+${template1 }                           ${template3}${addr enp0s31f6}
+]];

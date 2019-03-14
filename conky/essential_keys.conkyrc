@@ -1,0 +1,43 @@
+conky.config = {
+	alignment = 'bottom_right',
+	color2 = '8B8673',
+	default_color = '8B8673',
+    use_xft = true,
+	font = 'Liberation Mono:size=10',
+    xftalpha = 0.8,
+    update_interval = 3600.0,
+    update_interval_on_battery = 3600.0,
+    total_run_times = 0,
+    own_window = true,
+    own_window_transparent = true,
+    own_window_argb_visual = true,
+    own_window_type = 'normal',
+    own_window_class = 'conky-semi',
+    own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+    background = true,
+    double_buffer = true,
+    imlib_cache_size = 0,
+    uppercase = false,
+    override_utf8_locale = true,
+}
+conky.text = [[
+${alignc}pacman
+${hr}
+pacman -Syu ${alignr}Komplette Systemaktualisierung
+pacman -Sy ${alignr}Lokale Datenbank aktualisieren
+pacman -Su ${alignr}Alle installierten Pakete aktualisieren
+pacman -Si ${alignr}Info zu nicht instl. Paktet
+pacman -S <Paket> ${alignr}Pakte installieren
+pacman -R <Paket> ${alignr}Pakte deinstallieren
+pacman -Rs <Paket> ${alignr}Pakte mit Abh. deinstallieren
+pacman -Qdtq | pacman -Rs ${alignr}apt autoremove
+pacman -Rscn <Paket> ${alignr} apt purge
+${alignc} AUR
+${hr}
+blah + Space${alignr}blub
+git clone htps://...${alignr}get package
+check PKGBUILD
+makepkg ${alignr}Package erstellen
+pacman -U beispiel-paket.tar.xz${alignr}Paket installieren 
+
+]];

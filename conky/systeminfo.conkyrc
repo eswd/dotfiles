@@ -1,0 +1,74 @@
+conky.config = {
+    use_xft = true,
+    xftalpha = 0.8,
+    update_interval = 30.0,
+    update_interval_on_battery = 120.0,
+    total_run_times = 0,
+    own_window = true,
+    own_window_transparent = true,
+    own_window_argb_visual = true,
+    own_window_type = 'normal',
+    own_window_class = 'conky-semi',
+    own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+    background = true,
+    double_buffer = true,
+    imlib_cache_size = 0,
+    uppercase = false,
+    override_utf8_locale = true,
+
+    -- placement
+    alignment = 'bottom_middle',
+    gap_x = -140,
+    gap_y = 0,
+
+    -- default drawing
+    draw_shades = false,
+    draw_outline = false,
+    draw_borders = false,
+    draw_graph_borders = true,
+
+    -- colors
+    font = 'Liberation Mono:size=10',
+    --default_color = 'EEEEEE',
+    default_color = '8B8673',
+    color1 = 'AABBFF',
+    color2 = 'FF993D',
+    color3 = '8B8673',
+    --color3 = 'AAAAAA',
+    color4 = '000000',
+    color5 = '111111',
+
+--${template1 Ip}                                                             ${template3}${addrs eth0}
+    -- layouting
+    template0 = [[${font Liberation Sans:bold:size=11}${color2}\1 ${color3}${hr 2}${font}]],
+    template1 = [[${color1}\1]],
+    template2 = [[${goto 100}${color}]],
+    template3 = [[${goto 180}${color}${alignr}]],
+    template4 = [[${font Liberation Sans:bold:size=11}${color green}\1 ${color3}${hr 2}${font}]],
+    template5 = [[${font Liberation Sans:bold:size=11}${color red}\1 ${color3}${hr 2}${font}]],
+};
+
+conky.text = [[
+${template1 hdd}                                                           ${template3}${fs_free /} free
+${if_existing /proc/net/dev_snmp6/wg0}
+${template4 vpn}
+${template1 wg0}                                                         ${template3}${addr wg0}
+${else}${if_existing /proc/net/dev_snmp6/mvde1}
+${template4 vpn}
+${template1 mvde1}                                                         ${template3}${addr mvde1}
+${else}${if_existing /proc/net/dev_snmp6/mvde2}
+${template4 vpn}
+${template1 mvde2}                                                         ${template3}${addr mvde2}
+${else}${if_existing /proc/net/dev_snmp6/mvse}
+${template4 vpn}
+${template1 mvse}                                                         ${template3}${addr mvse}
+${else}${if_existing /proc/net/dev_snmp6/mvno}
+${template4 vpn}
+${template1 mvno}                                                         ${template3}${addr mvno}
+${else}${if_existing /proc/net/dev_snmp6/mvus}
+${template4 vpn}
+${template1 mvus}                                                         ${template3}${addr mvus}
+${else}
+${template5 vpn}
+${endif}${endif}${endif}${endif}${endif}${endif}
+]];
