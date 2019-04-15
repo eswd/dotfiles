@@ -15,3 +15,6 @@ Thumbs.db
 
 # vim
 .vim/.netrwhist
+
+# zsh
+.zsh_nogit
