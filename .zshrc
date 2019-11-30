@@ -23,6 +23,5 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias mutt="~/Dokumente/.mailanhaenge && mutt"
-alias pass='pass show -c'
 
 source .dotfiles/.zsh_nogit
