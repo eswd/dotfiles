@@ -132,11 +132,4 @@ vnoremap <Leader>s :sort<CR>
 vnoremap < <gv  " better indentation
 vnoremap > >gv  " better indentation
 
-
-
-" Setup Pathogen to manage your plugins
-" mkdir -p ~/.vim/autoload ~/.vim/bundle
-" curl -so ~/.vim/autoload/pathogen.vim https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim
-" Now you can install any plugin into a .vim/bundle/plugin-name/ folder
-call pathogen#infect()
 set laststatus=2
