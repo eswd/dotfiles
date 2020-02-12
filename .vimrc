@@ -21,9 +21,10 @@ color wombat256mod
 " Enable syntax highlighting
 " You need to reload this file for the change to apply
 set nocompatible  " for vim wiki test
-filetype off
-filetype plugin indent on
-syntax on
+" will be handled by the vim-plug plugin
+" filetype off
+" filetype plugin indent on
+" syntax on
 
 
 """ Settings
@@ -133,3 +134,12 @@ vnoremap < <gv  " better indentation
 vnoremap > >gv  " better indentation
 
 set laststatus=2
+
+" vim-plug - plugin manager
+call plug#begin()
+Plug 'https://github.com/tpope/vim-commentary.git'
+call plug#end()
+
+
+
+
