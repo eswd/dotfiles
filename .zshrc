@@ -25,3 +25,5 @@ source $ZSH/oh-my-zsh.sh
 alias mutt="~/Dokumente/.mailanhaenge && mutt"
 
 source .dotfiles/.zsh_nogit
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
