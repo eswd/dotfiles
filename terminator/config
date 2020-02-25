@@ -1,20 +1,29 @@
 [global_config]
-  title_font = Sans 12
-  title_receive_bg_color = "#cc0000"
   title_transmit_bg_color = "#4e9a06"
-  title_use_system_font = False
 [keybindings]
 [layouts]
   [[default]]
-    [[[child1]]]
-      parent = window0
-      type = Terminal
-    [[[window0]]]
+    [[[child0]]]
+      fullscreen = False
+      last_active_term = 2b85d311-ee17-4f7b-8a0e-455410af0f51
+      last_active_window = True
+      maximised = False
+      order = 0
       parent = ""
+      size = 1006, 573
+      title = felw@felw: ~
       type = Window
+    [[[terminal1]]]
+      order = 0
+      parent = child0
+      profile = default
+      type = Terminal
+      uuid = 2b85d311-ee17-4f7b-8a0e-455410af0f51
 [plugins]
 [profiles]
   [[default]]
+    background_color = "#002b36"
     cursor_color = "#aaaaaa"
     font = Source Code Pro 11
+    foreground_color = "#839496"
     use_system_font = False
