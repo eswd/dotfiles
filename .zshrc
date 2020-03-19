@@ -23,7 +23,12 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias mutt="~/Dokumente/.mailanhaenge && mutt"
-
+alias grepd="grep -iRl"
+alias gits="git status"
 source .dotfiles/.zsh_nogit
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/felw/.sdkman"
+[[ -s "/home/felw/.sdkman/bin/sdkman-init.sh" ]] && source "/home/felw/.sdkman/bin/sdkman-init.sh"
