@@ -44,8 +44,8 @@ set number                          " show relative line numbers
 set tw=79                           " width of document (used by gd)
 set nowrap                          " don't automatically wrap on load
 set fo-=t                           " don't automatically wrap text when typing
-set colorcolumn=80                  " black line on the left
-highlight ColorColumn ctermbg=233   " the color of the black line on the left
+"set colorcolumn=80                  " black line on the left
+"highlight ColorColumn ctermbg=233   " the color of the black line on the left
 
 " diable recording for a while..
 
@@ -140,6 +140,7 @@ call plug#begin()
 Plug 'https://github.com/tpope/vim-commentary.git'
 call plug#end()
 
-
+" some tries
+set scrolloff=3
 
 

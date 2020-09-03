@@ -1,6 +1,11 @@
 [global_config]
   title_transmit_bg_color = "#4e9a06"
 [keybindings]
+  switch_to_tab_1 = <Alt>1
+  switch_to_tab_2 = <Alt>2
+  switch_to_tab_3 = <Alt>3
+  switch_to_tab_4 = <Alt>4
+  switch_to_tab_5 = <Alt>5
 [layouts]
   [[default]]
     [[[child0]]]
@@ -24,6 +29,8 @@
   [[default]]
     background_color = "#002b36"
     cursor_color = "#aaaaaa"
-    font = Source Code Pro 11
+    font = Source Code Pro 10
     foreground_color = "#839496"
+    login_shell = True
+    palette = "#000000:#cc0000:#4e9a06:#c4a000:#3465a4:#ad7fa8:#06989a:#d3d7cf:#555753:#ef2929:#8ae234:#fce94f:#729fcf:#ad7fa8:#34e2e2:#eeeeec"
     use_system_font = False

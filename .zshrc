@@ -6,6 +6,7 @@ export ZSH=$HOME/.oh-my-zsh
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 
 ZSH_THEME="mytheme"
+# ZSH_THEME="powerlevel10k/powerlevel10k"
 
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
@@ -24,10 +25,16 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias mutt="~/Dokumente/.mailanhaenge && mutt"
 alias grepd="grep -iRl"
+alias gd="grep -iRl"
 alias gits="git status"
+alias sai="sudo apt install"
 source .dotfiles/.zsh_nogit
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+cd /local/etl
+
+export PATH=~/.local/bin/:$PATH
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/felw/.sdkman"
