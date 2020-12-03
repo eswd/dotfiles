@@ -27,7 +27,10 @@ alias mutt="~/Dokumente/.mailanhaenge && mutt"
 alias grepd="grep -iRl"
 alias gd="grep -iRl"
 alias gits="git status"
+#alias gs="git status"
 alias sai="sudo apt install"
+alias fd=fdfind
+alias lt='ls --human-readable --size -1 -S --classify'
 source .dotfiles/.zsh_nogit
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -35,6 +38,18 @@ source .dotfiles/.zsh_nogit
 cd /local/etl
 
 export PATH=~/.local/bin/:$PATH
+
+function cd
+{
+    if [ $# -eq 0 ]; then
+        pushd ~ > /dev/null
+    elif [ " $1" = " -" ]; then
+        pushd "$OLDPWD" > /dev/null
+    else
+        pushd "$@" > /dev/null
+    fi
+}
+
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/felw/.sdkman"
