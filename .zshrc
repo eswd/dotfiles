@@ -36,9 +36,48 @@ alias large_files="find . -xdev -type f -size +800M"
 ### additional stuff
 
 export PATH=~/.local/bin/:$PATH
+export OPENTTD_REPO="~/.local/share/openttd/save"
 
 # "fd-find" needs to be installed 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+### functions
+
+git_auto_commit() {
+    local git_dir="$1"
+    echo $git_dir
+    local hostname="$(hostname)"
+    local current_datetime="$(date +'%Y-%m-%d %H:%M:%S')"
+    local original_dir="$PWD"
+
+    # Wechsle in das Ziel-Git-Verzeichnis
+    cd "${git_dir/#\~/$HOME}" || { echo "Fehler: Konnte nicht in das Verzeichnis wechseln."; return 1; }
+
+    # Git Pull, prüfe auf Fehler
+    if ! git pull; then
+        echo "Fehler beim Pullen von Änderungen. Der Commit und Push werden abgebrochen."
+        return 1
+    fi
+
+    # Prüfe, ob es Änderungen gibt
+    if ! [[ `git status --porcelain` ]]; then
+        echo "Keine Änderungen im Git-Verzeichnis."
+    else
+        # Füge alle Änderungen hinzu
+        git add .
+
+        # Führe einen Commit mit einer dynamischen Commit-Nachricht durch
+        git commit -m "Commit von $hostname am $current_datetime."
+
+        # Push zu remote (hier als Beispiel "origin" verwenden)
+        git push
+
+        echo "Git Pull, Commit und Push erfolgreich durchgeführt."
+    fi
+
+    cd $original_dir
+}
+
 
 ### source some system specifics
 
